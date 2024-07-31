@@ -1,109 +1,190 @@
 *{
-    font-family: "Nunito Sans", sans-serif;
+    padding:0;
+    margin:0;
 }
 
-/*Header*/
-header{
-    background-color: #EEEEEE;
+body{
+    background-color: white;
+    font-family: sans-serif;
+    font-weight: bold;
 }
 
-header span{
-    color:#201E43; 
+header nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 98vw;
+    height: 80px;
+    font-size: 16px;
+    position: fixed;
+    z-index: 1;
+    background-color: white;
 }
 
-.nav-item a{
-    color:#134B70; 
-}
-
-/*Link visitado*/
-.nav-item a:visited{
-    color:#134B70; 
-}
-
-.nav-item a:hover{
-    color: #508C9B; 
-}
-
-#nav-button{
-    background-color: #508C9B;
-}
-
-#rounded{
-    border-radius: 100px;
-}
-
-/*
-.sobre-mi{
-    background-image:url("/bg2.jpg"); 
-    background-repeat: no-repeat;
-    background-position: center;
-}
-*/
-
-/*Ícono Desarrollo Web*/
-.icon-square .bi{
-    color:#134B70;
-    width: auto;
-    /*border-radius: 20px;*/
-}
-
-
-.img-proyecto1{
-    background-image: url('assets/pinterest3.png');
-    background-repeat: no-repeat; 
-    background-size: 600px;
-    background-blend-mode: screen;
-}
-
-
-.img-proyecto1 h3{
-    color:#134B70; 
-}
-
-.img-proyecto3{
-    background-image: url('assets/RPG.jpg');
-    background-repeat: no-repeat; 
-    background-position: center;
-    background-size: 550px;
-    background-blend-mode: screen;
-}
-
-.img-proyecto3 h3{
-    color:#134B70; 
-}
-
-#habilidades{
-    background-color: #EEEEEE; 
-}
-
-.icon-square .bi{
-    background-color: #134B70;
-    color: beige;
-    width: 60px;
-    height: 60px;
-    border-radius: 50px;
-    font-size: 1.5em;
-    text-align: center;
+#pinterest-icon{
+    width: 35px; 
+    height: 35px; 
     padding: 4px;
 }
 
-/*Footer*/
-footer .icon-footer i{
-    color: #508C9B; 
+/*Para ponerle el círculo gris al colocar el cursor sobre el ícono*/
+#pinterest-icon:hover{ 
+    background-color: #e9e9e9;
+    border-radius: 150px; 
 }
 
-footer p{
-    color: #508C9B
-}
-footer p a{
-    text-decoration:none;
+.first-list{
+    display:flex; 
 }
 
-/*Favicon*/
-
-.page-icon{
-    color:pink;
+.first-list li{
+    list-style:none; 
+    padding:0px 12px; /*Arriba/Abajo y Dcha/Izq*/   
 }
 
+.first-list a{
+    text-decoration:none; 
+    color:black
+}
+
+#inicio{
+    background-color: black; 
+    color:white;
+    padding: 14px 12px;  
+    border-radius: 25px; 
+}
+
+/*Barra de búsqueda*/ 
+.search{
+    flex-grow: 1; 
+    width: 48px; 
+    background-color: #e9e9e9; 
+    border-radius: 30px; 
+}
+
+/*:hover - Para ponerle un color más oscuro al poner el cursor sobre search bar*/
+.search:hover{
+    background-color: #e1e1e1;
+}
+
+/*Para que al seleccionar la barra, se ponga un margen azul*/
+.search:focus-within{
+    border: 4px solid #7fc1ff; 
+}
+
+.barra{
+    display: flex; 
+    align-items: center; 
+    height: 48px; 
+}
+
+#lupa{
+    padding: 13px;
+    color: #767676; 
+    font-size: 20px; 
+    font-weight: bolder; 
+}
+
+.barra input{
+    border: none; 
+    background-color: inherit; /*Buscar el color de su etiqueta padre: barra*/
+    outline: none; 
+    padding: 0px 8px 0px 0px; 
+    font-size: 16px; 
+    flex-grow: 1; 
+}
+
+/*Íconos de la derecha*/ 
+.right-items span{
+    padding: 8px; 
+    color: #767676; 
+    font-size: 28px; 
+}
+
+.right-items span:hover{
+    background-color: #e9e9e9;
+    border-radius: 150px; 
+    /*Cuando cursor se para alguno de estos elementos, se vuelve una manita*/
+    cursor: pointer; 
+}
+
+/*Estilos Main*/
+.contenido{
+    position: absolute;
+    margin-top: 80px; 
+}
+
+.imagenes{
+    columns: 5 240px; 
+    margin: auto; 
+}
+
+.card-image{
+    top: 80px; /*Se agregó esto adicional. Preguntar*/
+    position: relative; 
+    padding: 6px; 
+}
+
+.card-image img{
+    border-radius: 15px; 
+    min-width: 240px;
+    max-width: 240px; 
+}
+
+.card-image:hover>:first-child{/*Se aplica a solamente los primeros hijos*/
+    filter: brightness(60%); /*Modifica el brillo del hover*/
+}
+
+.card-image:hover>*{/*Selector universal: todo lo que esté dentro*/
+    visibility: visible; /*Todos los elementos visibles al hacer hover*/
+    display: inline; 
+}
+
+.button{
+    position: absolute; 
+    left: 50%; 
+    top: 5%; 
+    padding: 13px 15px; /*Agranda el contenedor*/
+    background-color: #e60023; 
+    border-radius: 30px; 
+    border: none; 
+    visibility: hidden; /*Solo se verá cuando se hace hover*/
+}
+
+.card-image button a{
+    text-decoration: none;
+    color:white; 
+    font-size: 16px; 
+    font-weight: bold; 
+}
+
+.oculto1{
+    position: absolute; 
+    left: 52%; 
+    bottom: 8%; /*Espacio que se tiene abajo*/
+    background-color: white; 
+    font-size: 30px; 
+    border-radius: 50px; 
+    color: black; 
+    font-weight: bold; 
+    padding: 4px;/*Para que se separe del circulito*/
+    visibility: hidden; /*Aparece hasta el hover*/
+    display: none; 
+}
+
+.oculto2{
+    position: absolute; 
+    left: 68%; 
+    bottom: 8%; /*Espacio que se tiene abajo*/
+    background-color: white; 
+    font-size: 30px; 
+    border-radius: 50px; 
+    color: black; 
+    font-weight: bold; 
+    padding: 4px;/*Para que se separe del circulito*/
+    visibility: hidden; /*Aparece hasta el hover*/
+    display: none;  
+}
 
 
